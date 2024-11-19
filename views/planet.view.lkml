@@ -115,4 +115,19 @@ view: planet {
     type: count
     drill_fields: [planet_id, planet_name]
   }
+  measure: habitable_planet_count {
+    type: number
+    sql:
+    CASE
+      WHEN ${planet_mass_earth} BETWEEN 0.1 AND 10
+      AND ${planet_radius_earth} BETWEEN 0.5 AND 2.5
+      AND ${equilibrium_temperature_k} BETWEEN 175 AND 274
+      AND ${eccentricity} < 0.2
+      AND ${insolation_flux_earth} BETWEEN 0.7 AND 1.3
+      AND ${planet_density} > 1
+      THEN ${planet_id}
+      ELSE NULL
+    END ;;
+  }
+
 }
