@@ -129,8 +129,5 @@ view: planet {
         ELSE 0
       END
      ;;
-
   }
-
-
 }
