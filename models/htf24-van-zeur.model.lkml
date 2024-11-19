@@ -17,6 +17,12 @@ explore: planet {
 
 explore: discovery_facility {}
 
-explore: discovery_telescope {}
+explore: discovery_telescope {
+  join: discovery_facility {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${discovery_telescope.facility_id} = ${facility_id} ;;
+  }
+}
 
 explore: star {}
