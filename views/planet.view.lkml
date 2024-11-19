@@ -73,7 +73,7 @@ view: planet {
   }
   dimension: planet_mass_earth {
     type: number
-    sql: ${TABLE}.planet_mass_earth ;;
+    sql: ${TABLE}.planet_mass_earth BETWEEN 0.1 AND 10;;
   }
   dimension: planet_mass_jupiter {
     type: number
