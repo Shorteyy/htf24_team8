@@ -11,7 +11,7 @@ explore: planet {
   join: star {
     type: left_outer
     relationship: many_to_one
-    sql_on: ${star.host_id} = ${host_id};;
+    sql_on: ${planet.host_id} = ${host_id};;
   }
 }
 
