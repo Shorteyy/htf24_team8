@@ -18,23 +18,22 @@ explore: planet {
     relationship: many_to_one
     sql_on: ${discovery_facility.facility_id} = ${facility_id} ;;
   }
+  join: discovery_telescope {
+    type: inner
+    relationship: one_to_many
+    sql_on: ${discovery_facility.facility_id} = ${facility_id} ;;
+  }
 }
 
 explore: discovery_facility {
   join: discovery_telescope {
     type: left_outer
-    relationship: many_to_one
+    relationship: one_to_many
     sql_on: ${discovery_facility.facility_id} = ${facility_id} ;;
   }
 }
 
-explore: discovery_telescope {
-  join: discovery_facility {
-    type: left_outer
-    relationship: many_to_one
-    sql_on: ${discovery_telescope.facility_id} = ${facility_id} ;;
-  }
-}
+explore: discovery_telescope {}
 
 explore: star {
   join: planet {
