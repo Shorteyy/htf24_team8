@@ -30,4 +30,10 @@ explore: discovery_telescope {
   }
 }
 
-explore: star {}
+explore: star {
+  join: planet {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${star.host_id} = ${host_id} ;;
+  }
+}
