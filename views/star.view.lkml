@@ -41,15 +41,6 @@ view: star {
     type: count
     drill_fields: [host_name]
   }
-  measure: habitable_planet_count_by_host {
-    type: number
-    sql:
-    SUM(
-      CASE
-        WHEN ${planet.habitable_planet_count} > 0 THEN 1
-        ELSE 0
-      END
-    ) ;;
-  }
+
 
 }
