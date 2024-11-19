@@ -20,7 +20,13 @@ explore: planet {
   }
 }
 
-explore: discovery_facility {}
+explore: discovery_facility {
+  join: discovery_telescope {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${discovery_facility.facility_id} = ${facility_id} ;;
+  }
+}
 
 explore: discovery_telescope {
   join: discovery_facility {
