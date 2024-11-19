@@ -119,7 +119,7 @@ view: planet {
     type: number
     sql:
     CASE
-      WHEN ${planet_mass_earth} BETWEEN 0.1 AND 10
+      WHEN ${planet_mass_earth} BETWEEN 0.1 AND 10.0
       AND ${planet_radius_earth} BETWEEN 0.5 AND 2.5
       AND ${equilibrium_temperature_k} BETWEEN 175 AND 274
       AND ${eccentricity} < 0.2
