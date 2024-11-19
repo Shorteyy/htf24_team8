@@ -13,6 +13,11 @@ explore: planet {
     relationship: many_to_one
     sql_on: ${planet.host_id} = ${host_id};;
   }
+  join: discovery_facility {
+    type: left_outer
+    relationship: many_to_one
+    sql_on: ${discovery_facility.facility_id} = ${facility_id} ;;
+  }
 }
 
 explore: discovery_facility {}
