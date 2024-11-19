@@ -116,9 +116,8 @@ view: planet {
     drill_fields: [planet_id, planet_name]
   }
   measure: habitable_planet_count {
-    type: number
+    type: sum_distinct
     sql:
-    SUM(
       CASE
         WHEN ${planet_mass_earth} BETWEEN 0.1 AND 10
         AND ${planet_radius_earth} BETWEEN 0.5 AND 2.5
@@ -129,7 +128,8 @@ view: planet {
         THEN 1
         ELSE 0
       END
-    ) ;;
+     ;;
+
   }
 
 
