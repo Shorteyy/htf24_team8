@@ -41,4 +41,6 @@ view: star {
     type: count
     drill_fields: [host_name]
   }
+
+
 }
