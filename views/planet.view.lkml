@@ -113,7 +113,7 @@ view: planet {
   }
   measure: count {
     type: count
-    drill_fields: [planet_id, planet_name]
+    #drill_fields: [planet_id, planet_name]
   }
   measure: habitable_planet_count {
     type: sum_distinct
